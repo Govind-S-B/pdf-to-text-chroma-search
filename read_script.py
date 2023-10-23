@@ -3,10 +3,10 @@ import chromadb
 # Initialize Chroma DB client
 client = chromadb.PersistentClient(path="./db")
 collection = client.get_collection(name="my_collection")
-from langchain.embeddings import GPT4AllEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 
 # Initialize GPT4All embeddings
-embeddings = GPT4AllEmbeddings()
+embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
 
 # Get user input
 query = input("Enter your query: ")
